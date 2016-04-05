@@ -4,9 +4,8 @@ var hbs = require('hbs');
 
 app.set('view engine', 'hbs');
 app.engine('html', hbs.__express);
-hbs.registerPartials(__dirname + '/views/partials');
 
-
+require('./server/hbsRegister')(hbs);
 
 require('./config/express')(app);
 
