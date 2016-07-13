@@ -1,7 +1,17 @@
 var path = require('path');
 var fs = require('fs');
 
-var pageName = 'historyOrder'; //需要创建的页面
+var pageName = ''; //需要创建的页面
+
+process.argv.forEach((val, index, array) => {
+  if(/^page=/.test(val)) {
+      pageName = val.split('=')[1];
+  }
+});
+if(pageName=='') {
+    console.error('创建页面失败：','请设定页面名称 page=""');
+    process.exit(1);
+}
 
 var pathObject = {
     api:path.resolve('server/api/',pageName+'.api.js'),
