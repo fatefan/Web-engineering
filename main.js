@@ -1,4 +1,5 @@
 var express = require("express");
+var env = require("./server/config/env/"+process.env.NODE_ENV);
 var app = express();
 var hbs = require('hbs');
 
