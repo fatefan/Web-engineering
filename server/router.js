@@ -1,22 +1,14 @@
-var libs = require("../libs.js");
-module.exports = function (app) {
+var router = require("express")();
+var A = require('./controllers/a.controller');
+var B = require('./controllers/b.controller');
+module.exports = function () {
 
-  app.get(['/a',''],function (req, res) {
-    var js = libs.getJs('a');
-    var css = libs.getCss("a");
-    res.render('a/index',{
-      cssHref:css,
-      jsSrc : js,
-    });
+  router.use(A());
+  router.use(B());
+  router.all('**',(req,res,next)=>{
+    res.send('404 NOT PAGE!')
   });
 
-  app.get('b',function (req, res) {
-    var js = libs.getJs('b');
-    var css = libs.getCss("b");
-    res.render('a/index',{
-      cssHref:css,
-      jsSrc : js,
-    });
-  });
+  return router;
 
 };

@@ -1,21 +1,16 @@
 {
-  "name": "dd_crm_web",
+  "name": "node-demo",
   "version": "1.0.0",
-  "description": "CRM Web",
   "main": "main.js",
   "scripts": {
     "start": "node-dev main.js NODE_ENV=development",
     "develop": "gulp develop"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@192.168.1.113:/home/git/repositories/dd_crm_web.git"
-  },
   "keywords": [
-    "CRM",
+    "node",
     "AngularJS"
   ],
-  "author": "点点WEB team",
+  "author": "Fynn",
   "license": "ISC",
   "devDependencies": {
     "angular": "^1.5.1",

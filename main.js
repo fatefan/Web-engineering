@@ -13,9 +13,9 @@ require('./config/express')(app);
 app.set('views',  __dirname + '/views');
 app.use(express.static( __dirname+'/public'));  
 
+var route = require('./server/router');
 
-require('./server/route.js')(app);
-require('./server/api.js')(app);
+app.use(route());
 
 app.listen(3000);
 console.log("node server is start!");
